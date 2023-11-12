@@ -1,5 +1,7 @@
 # Mini project for DW & DSS course
 
+Data source: <https://drive.google.com/drive/folders/1GOsGgcTkMX8vhhntoVKYliINZ_CEqEmh>
+
 ## Prerequisites
 
 - `python` 3.10 & `pip` 22.0.2
