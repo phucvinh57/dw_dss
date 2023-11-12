@@ -1,7 +1,5 @@
 # Mini project for DW & DSS course
 
-## Project description
-
 ## Prerequisites
 
 - `python` 3.10 & `pip` 22.0.2
@@ -18,14 +16,18 @@
    ```bash
    docker-compose up -d
    ```
+3. Install pre-commit hooks
+   ```bash
+   pre-commit install
+   ```
 
-To play with `ClickHouse` database you can use `clickhouse-client`:
+All-in-one command:
 
 ```bash
-docker exec -it olapdb clickhouse-client
+pip install -r requirements.txt && docker-compose up -d && pre-commit install
 ```
 
-# Start application
+## Start application
 
 Run this command:
 
@@ -34,3 +36,11 @@ uvicorn main:app --reload
 ```
 
 Swagger documentation will be available at <http://localhost:8000/docs> or <http://localhost:8000/redoc>.
+
+## Play with `ClickHouse` database
+
+```bash
+docker exec -it olapdb clickhouse-client
+```
+
+See [ClickHouse documentation](https://clickhouse.com/docs/) for more details.
