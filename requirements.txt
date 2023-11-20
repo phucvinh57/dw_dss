@@ -2,3 +2,4 @@ fastapi==0.104.1
 uvicorn==0.24.0.post1
 pre-commit==3.5.0
 black==23.1.0
+clickhouse-driver==0.2.6

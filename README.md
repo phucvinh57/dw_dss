@@ -47,7 +47,34 @@ See [ClickHouse documentation](https://clickhouse.com/docs/) for more details.
 
 ## About data source
 
-Link: <https://drive.google.com/drive/folders/1GOsGgcTkMX8vhhntoVKYliINZ_CEqEmh>
+Link: <https://drive.google.com/drive/folders/1GOsGgcTkMX8vhhntoVKYliINZ_CEqEmh>.
+TL;DR: Run `python etl.py` to extract, transform and load data into `ClickHouse` database.
+
+After successful extraction, this is datawarehouse schema:
+
+```mermaid
+erDiagram
+    RATING_TAGS {
+        int userId
+        int movieId
+        float rating
+        string tag
+        int timestamp
+    }
+    MOVIES {
+        int movieId
+        string title
+        string genres
+        int imdbId
+        int tmdbId
+    }
+    GENOME_SCORES {
+        int movieId
+        int tagId
+        float relevance
+        string tag_name
+    }
+```
 
 ### Summary
 
@@ -57,9 +84,9 @@ Users were selected at random for inclusion. All selected users had rated at lea
 
 The data are contained in the files `genome-scores.csv`, `genome-tags.csv`, `links.csv`, `movies.csv`, `ratings.csv` and `tags.csv`.
 
-### Content and Use of Files
+### Data model
 
-ER Diagram:
+Before ETL process:
 
 ```mermaid
 erDiagram
@@ -94,8 +121,9 @@ erDiagram
         int tagId
         string tag
     }
-    
 ```
+
+### Content and Use of Files
 
 #### User Ids
 
