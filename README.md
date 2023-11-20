@@ -54,23 +54,28 @@ After successful extraction, this is datawarehouse schema:
 
 ```mermaid
 erDiagram
-    RATING_TAGS {
-        int userId
-        int movieId
+    RATINGS {
+        int user_id
+        int movie_id
         float rating
+        int timestamp
+    }
+    TAGS {
+        int user_id
+        int movie_id
         string tag
         int timestamp
     }
     MOVIES {
-        int movieId
+        int movie_id
         string title
         string genres
-        int imdbId
-        int tmdbId
+        int imdb_id
+        int tmdb_id
     }
     GENOME_SCORES {
-        int movieId
-        int tagId
+        int movie_id
+        int tag_id
         float relevance
         string tag_name
     }
@@ -91,34 +96,34 @@ Before ETL process:
 ```mermaid
 erDiagram
     RATINGS {
-        int userId
-        int movieId
+        int user_id
+        int movie_id
         float rating
         int timestamp
     }
     TAGS {
-        int userId
-        int movieId
+        int user_id
+        int movie_id
         string tag
         int timestamp
     }
     MOVIES {
-        int movieId
+        int movie_id
         string title
         string genres
     }
     LINKS {
-        int movieId
-        int imdbId
-        int tmdbId
+        int movie_id
+        int imdb_id
+        int tmdb_id
     }
     GENOME_SCORES {
-        int movieId
-        int tagId
+        int movie_id
+        int tag_id
         float relevance
     }
     GENOME_TAGS {
-        int tagId
+        int tag_id
         string tag
     }
 ```
